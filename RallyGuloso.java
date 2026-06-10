@@ -2,14 +2,14 @@ import java.util.*;
 
 public class RallyGuloso {
 
-    // trilha do rally de comprimento 𝐿
+    // trilha do rally de comprimento L
     // em um conjunto de pontos a distância entre cada par adjacente é no máximo d
     public static List<Integer> rallyguloso(int L, int d, int[] pontos) {
 
         int atual = 0;
         int indice = 0;
 
-        List<Integer> paradas = new ArrayList<>(); // pontos de paradas 𝑥1, 𝑥2, … , 𝑥n do ponto de partida
+        List<Integer> paradas = new ArrayList<>(); // pontos de paradas x1,x2,...,xn do ponto de partida
 
         while (atual + d < L) {
 
@@ -23,7 +23,7 @@ public class RallyGuloso {
             }
 
             if (ultimo == atual) {
-                return null; // n existe solucao
+                return null; // não existe solucao
             }
 
             paradas.add(ultimo);
@@ -36,7 +36,7 @@ public class RallyGuloso {
     public static void main(String[] args) {
 
         int L = 25; // comprimento da rally
-        int d = 10; // distancia q podemos andar antes de anoitecer
+        int d = 10; // distancia que podemos andar antes de anoitecer
 
         int[] pontos = { 5, 9, 13, 18, 24 };
 
