@@ -40,14 +40,24 @@ public class RallyGuloso {
 
         int[] pontos = { 5, 9, 13, 18, 24 };
 
+        long tempoInicio = System.nanoTime();
         List<Integer> resultado = rallyguloso(L, d, pontos);
+        long tempoFim = System.nanoTime();
+
+        long duracaoNanos = tempoFim - tempoInicio;
+        double duracaoMillis = duracaoNanos / 1_000_000.0;
 
         if (resultado == null) {
             System.out.println("Não existe solução.");
         } else {
 
+            System.out.println("----------------------------------------");
             System.out.println("Paradas: " + resultado);
             System.out.println("Quantidade de paradas: " + resultado.size());
         }
+
+        System.out.println("----------------------------------------");
+        System.out.println("Tempo de execução (ns): " + duracaoNanos + " ns");
+        System.out.printf("Tempo de execução (ms): %.4f ms\n", duracaoMillis);
     }
 }
